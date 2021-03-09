@@ -4,8 +4,16 @@
   "description": "A Cypress project that will check the Stardew Valley Store to check if the boardgame is back in stock.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cypress:open": "cypress open",
+    "test": "cypress run",
+    "test:ci": "cypress run --headless"
   },
   "author": "Marcus Lyons <marcus@marcuslyons.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@testing-library/cypress": "^7.0.4",
+    "cypress": "^6.6.0",
+    "prettier": "^2.2.1"
+  }
 }
