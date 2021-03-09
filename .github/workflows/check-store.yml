@@ -1,0 +1,20 @@
+# Scheduled workflow, with a manual option, to run the Cypress test that checks the
+# store page.
+
+name: Check Store
+
+on:
+  schedule:
+    - cron:  '0 8,18 * * *'
+  workflow_dispatch:
+
+jobs:
+  cypress-run:
+    name: Run Cypress test
+    runs-on: ubuntu-16.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          headless: true
