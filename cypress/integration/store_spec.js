@@ -1,5 +1,10 @@
 describe("Stardew Valley Store", () => {
-  it("Check if main page says unavailable", () => {
+  it("Main page says sold out", () => {
+    cy.visit("https://shop.stardewvalley.net");
+    cy.findAllByText(/Sold out/i);
+  });
+
+  it("Item page says sold out", () => {
     cy.visit(
       "https://shop.stardewvalley.net/products/stardew-valley-the-board-game"
     );
