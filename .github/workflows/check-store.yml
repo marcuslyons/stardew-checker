@@ -5,13 +5,13 @@ name: Check Store
 
 on:
   schedule:
-    - cron:  '0 8,18 * * *'
+    - cron:  '0,20,40 * * * *'
   workflow_dispatch:
 
 jobs:
   cypress-run:
     name: Run Cypress test
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: cypress-io/github-action@v2
@@ -22,7 +22,7 @@ jobs:
   twilio-sms:
     name: 'Sending SMS Notification'
     if: ${{ failure() }}
-    runs-on: 'ubuntu-latest'
+    runs-on: ubuntu-latest
     steps:
       - uses: twilio-labs/actions-sms@v1
         with:
