@@ -1,6 +1,6 @@
 {
   "name": "stardew-checker",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A Cypress project that will check the Stardew Valley Store to check if the boardgame is back in stock.",
   "main": "index.js",
   "scripts": {
